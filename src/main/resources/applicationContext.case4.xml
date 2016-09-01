@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+
+	<!--  Case 1 -->
+	<bean id="beak" class="com.isa.case4.Beak" />
+	<bean id="yellowBeak" class="com.isa.case4.YellowBeak" />
+	<bean id="blueBeak" name="blue" class="com.isa.case4.BlueBeak" />
+	<bean id="bird" class="com.isa.case4.Bird">
+		<property name="beak" ref="yellowBeak"/>
+		<property name="counter" value="15"/>
+	</bean>
+</beans>
