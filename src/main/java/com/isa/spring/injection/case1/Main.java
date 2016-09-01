@@ -1,11 +1,11 @@
 package com.isa.spring.injection.case1;
 
-import org.springframework.context.ApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Main {
 	public static void main(String[] args) {
-		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+		ConfigurableApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 		/**
 		 * Property based injection
 		 */
@@ -47,5 +47,6 @@ public class Main {
 		Bird bird_class = context.getBean(Bird.class);// Fails, because there are two beans with the same class: bird and bird2
 		bird_class.printBeak();
 		
+		context.close();
 	}
 }

@@ -1,11 +1,11 @@
 package com.isa.spring.injection.case2;
 
-import org.springframework.context.ApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class Main {
 	public static void main(String[] args) {
-		ApplicationContext context = new AnnotationConfigApplicationContext(MyConfiguration.class);
+		ConfigurableApplicationContext context = new AnnotationConfigApplicationContext(MyConfiguration.class);
 		/**
 		 * Property based injection. Beans are registered in Configuration class; but wired with annotations(@autowired). 
 		 * No componentscan is needed.
@@ -14,6 +14,6 @@ public class Main {
 //		Bird bird = (Bird) context.getBean(Bird.class);
 		bird.printBeak();
 		
-		
+		context.close();
 	}
 }
