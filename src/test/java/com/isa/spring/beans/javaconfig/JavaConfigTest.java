@@ -16,7 +16,9 @@ public class JavaConfigTest {
     private ApplicationContext context;
 
     private static final String BIRD = "bird";
+
     private static final String BLUE_BEAK = "blueBeak";
+
     private static final String YELLOW_BEAK = "yellowBeak";
 
     @Test

@@ -15,12 +15,14 @@ import org.springframework.test.context.junit4.SpringRunner;
 @ContextConfiguration(locations = "/applicationContext.prototype.xml")
 public class XmlPrototypeTest {
 
-	private static final String BIRD = "bird";
-	private static final String BLUE_BEAK = "blueBeak";
-	private static final String YELLOW_BEAK = "yellowBeak";
+    @Autowired
+    private ApplicationContext context;
 
-	@Autowired
-	private ApplicationContext context;
+	private static final String BIRD = "bird";
+
+	private static final String BLUE_BEAK = "blueBeak";
+
+	private static final String YELLOW_BEAK = "yellowBeak";
 
 	@Test
 	public void shouldFetchYellowBeak_ByName(){
